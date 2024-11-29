@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stránka s návrhem</title>
+	<link rel="stylesheet" href="styles_info_web.css">
+    <script>
+        function showMainContent(index) {
+            const mainContents = document.querySelectorAll('.main-content .content');
+            mainContents.forEach((content, i) => {
+                content.classList.toggle('hidden', i !== index);
+            });
+
+            const leftNavs = document.querySelectorAll('.left-nav .sub-content');
+            leftNavs.forEach((nav, i) => {
+                nav.classList.toggle('hidden', i !== index);
+            });
+        }
+
+        function showSubContent(mainIndex, subIndex) {
+            const subContents = document.querySelectorAll(`.content[data-main-index="${mainIndex}"] .sub-page`);
+            subContents.forEach((content, i) => {
+                content.classList.toggle('hidden', i !== subIndex);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Záhlaví stránky</h1>
+    </header>
+
+    <div class="top-nav">
+        <a href="#" onclick="showMainContent(0); return false;"><svg width="40" height="40" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" class="svg-inline--fa fa-home fa-w-18 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></a>
+        <a href="#" onclick="showMainContent(1); return false;">2</a>
+        <a href="#" onclick="showMainContent(2); return false;">3</a>
+        <a href="#" onclick="showMainContent(3); return false;">4</a>
+        <a href="#" onclick="showMainContent(4); return false;"><svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg" aria-labelledby="imagesTitleID imagesDescID" class="style-scope media-button">
+    <title id="imagesTitleID" class="style-scope media-button">Images icon</title>
+    <desc id="imagesDescID" class="style-scope media-button">An illustration of two photographs.</desc>
+    <path class="fill-color style-scope media-button" d="m20.8219178 15.3769871c0 1.1136708-.8767123 1.8932404-1.8630137 1.8932404s-1.9726027-.8909367-1.9726027-1.8932404c0-1.0023038.8767123-1.8932404 1.9726027-1.8932404.9863014 0 1.8630137.8909366 1.8630137 1.8932404zm-5.9178082-3.7864808h15.4520548v6.0138225l-1.9726028-3.3410125-2.6301369 6.3479237-2.1917809-2.67281-6.1369863 5.1228859h-2.5205479zm-1.7534247-1.6705063v14.9231892h18.8493151v-14.9231892zm-2.9589041 7.2388604c.2191781 0 1.9726028-.3341012 1.9726028-.3341012v-2.0046075l-4.1643836.5568354c.43835616 4.7887846.87671233 9.9116704 1.31506849 14.700455 6.02739731-.5568354 13.26027401-1.5591391 19.39726031-2.1159746-.1095891-.5568354-.1095891-2.0046075-.2191781-2.67281-.4383562.1113671-1.4246575 0-1.8630137.1113671v.8909367c-5.1506849.4454683-10.3013699 1.1136708-15.4520548 1.6705062.109589-.111367-.5479452-7.0161262-.9863014-10.8026071z" fill-rule="evenodd"></path>
+  </svg></a>
+    </div>
+
+    <div class="main-content">
+        <nav class="left-nav">
+            <div class="sub-content" data-main-index="0">
+                <a href="#" onclick="showSubContent(0, 0); return false;">Navigace 1</a>
+                <a href="#" onclick="showSubContent(0, 1); return false;">Navigace 2</a>
+            </div>
+            <div class="sub-content hidden" data-main-index="1">
+                <a href="#" onclick="showSubContent(1, 0); return false;">Navigace 1</a>
+                <a href="#" onclick="showSubContent(1, 1); return false;">Navigace 2</a>
+            </div>
+            <div class="sub-content hidden" data-main-index="2">
+                <a href="#" onclick="showSubContent(2, 0); return false;">Navigace 1</a>
+                <a href="#" onclick="showSubContent(2, 1); return false;">Navigace 2</a>
+            </div>
+            <div class="sub-content hidden" data-main-index="3">
+                <a href="#" onclick="showSubContent(3, 0); return false;">Navigace 1</a>
+                <a href="#" onclick="showSubContent(3, 1); return false;">Navigace 2</a>
+            </div>
+            <div class="sub-content hidden" data-main-index="4">
+                <a href="#" onclick="showSubContent(4, 0); return false;">Navigace 1</a>
+                <a href="#" onclick="showSubContent(4, 1); return false;">Navigace 2</a>
+            </div>
+        </nav>
+
+        <div class="content" data-main-index="0">
+            <div class="sub-page">							<!--Obsah hlavní stránky 1 - Podstránka 1-->
+                <h2>Obsah hlavní stránky 1 - Podstránka 1</h2>
+                <p>Text pro podstránku 1 hlavní stránky 1</p>
+            </div>
+            <div class="sub-page hidden">					<!--Obsah hlavní stránky 1 - Podstránka 2-->
+                <h2>Obsah hlavní stránky 1 - Podstránka 2</h2>
+                <p>Text pro podstránku 2 hlavní stránky 1</p>
+            </div>
+        </div>
+
+        <div class="content hidden" data-main-index="1">
+            <div class="sub-page">
+                <h2>Obsah hlavní stránky 2 - Podstránka 1</h2>
+                <p>Text pro podstránku 1 hlavní stránky 2</p>
+            </div>
+            <div class="sub-page hidden">
+                <h2>Obsah hlavní stránky 2 - Podstránka 2</h2>
+                <p>Text pro podstránku 2 hlavní stránky 2</p>
+            </div>
+        </div>
+
+        <div class="content hidden" data-main-index="2">
+ 			<div class="sub-page">
+                <h2>Obsah hlavní stránky 3 - Podstránka 1</h2>
+                <p>Text pro podstránku 1 hlavní stránky 3</p>
+            </div>
+            <div class="sub-page hidden">
+                <h2>Obsah hlavní stránky 3 - Podstránka 2</h2>
+                <p>Text pro podstránku 2 hlavní stránky 3</p>
+            </div>
+        </div>
+		
+        <div class="content hidden" data-main-index="3">
+            <h2>Obsah hlavní stránky 4</h2>
+            <p>Tady je obsah hlavní stránky 4.</p>
+        </div>
+
+        <div class="content hidden" data-main-index="4">
+            <object data="C:/Users/matuda/Desktop/Nová%20složka/used_html/upload_link_img.html" width="100%" height="750px">
+</object>
+        </div>
+    </div>
+
+</body>
+</html>

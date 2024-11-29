@@ -1,0 +1,83 @@
+/* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Záhlaví stránky */
+        header {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Navigace pro přepínání obsahu stránky */
+        .top-nav {
+            background-color: #00aaff;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .top-nav a {
+            color: black;
+            background-color: blue;
+            border: 2px solid #00aaff;
+            padding: 5px 10px;
+            margin: 0 5px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .top-nav a:hover {
+            background-color: #00aaff;
+            color: white;
+        }
+
+        /* Hlavní obsah stránky */
+        .main-content {
+            display: flex;
+            margin: 20px;
+        }
+
+        /* Levá navigace */
+        .left-nav {
+            width: 20%;
+            background-color: #ccff00;
+            padding: 10px;
+        }
+
+        .left-nav a {
+            display: block;
+            color: #000;
+            text-decoration: none;
+            margin: 5px 0;
+            padding: 5px;
+            background-color: white;
+            border: 1px solid #aacc00;
+            text-align: center;
+        }
+
+        .left-nav a:hover {
+            background-color: #aacc00;
+            color: white;
+        }
+
+        /* Obsah pod stránky */
+        .content {
+            width: 80%;
+            background-color: #ccffcc;
+            padding: 20px;
+            border: 1px solid green;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
